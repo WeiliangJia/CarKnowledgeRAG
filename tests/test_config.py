@@ -26,17 +26,21 @@ class SettingsTest(unittest.TestCase):
         self.assertEqual(settings.log_level, "INFO")
 
     def test_main_displays_defaults(self) -> None:
-        output = io.StringIO()
-        with redirect_stdout(output):
-            main()
+        with patch("car_knowledge_rag.__main__.configure_logging") as configure:
+            with self.assertLogs("car_knowledge_rag", level="INFO") as captured:
+                main()
+        configure.assert_called_once_with("INFO")
         self.assertEqual(
-            output.getvalue().splitlines(),
-            [
-                "CarKnowledgeRAG: Python environment is ready.",
-                "Environment: development",
-                "Log level: INFO",
-            ],
+            captured.output,
+            ["INFO:car_knowledge_rag:Application started environment=development"],
         )
+
+    def test_main_passes_configured_level_to_logging(self) -> None:
+        os.environ["LOG_LEVEL"] = "ERROR"
+        with patch("car_knowledge_rag.__main__.configure_logging") as configure:
+            with self.assertLogs("car_knowledge_rag", level="INFO"):
+                main()
+        configure.assert_called_once_with("ERROR")
 
     def test_environment_overrides_defaults(self) -> None:
         os.environ.update(APP_ENV="production", LOG_LEVEL="DEBUG")

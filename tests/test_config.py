@@ -77,7 +77,11 @@ class SettingsTest(unittest.TestCase):
             Settings()
 
     def test_invalid_values_are_rejected(self) -> None:
-        for field, value in [("APP_ENV", "prod"), ("LOG_LEVEL", "debug"), ("LOG_LEVEL", "")]:
+        for field, value in [
+            ("APP_ENV", "prod"),
+            ("LOG_LEVEL", "debug"),
+            ("LOG_LEVEL", ""),
+        ]:
             with self.subTest(field=field, value=value):
                 with patch.dict(os.environ, {field: value}):
                     with self.assertRaises(ValidationError):

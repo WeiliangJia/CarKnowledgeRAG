@@ -6,7 +6,6 @@ from pydantic import ValidationError
 from car_knowledge_rag.config import Settings
 from car_knowledge_rag.logging_config import configure_logging
 
-
 logger = logging.getLogger("car_knowledge_rag")
 
 

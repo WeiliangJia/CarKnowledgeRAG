@@ -1,6 +1,6 @@
 # CarKnowledgeRAG
 
-个人车辆知识问答 RAG 调研项目。当前完成 A4、A5 和 A6（控制台日志、级别与异常日志示例）。
+个人车辆知识问答 RAG 调研项目。当前实现 A4～A7：环境、配置、日志和自动质量检查。
 
 ## 环境
 
@@ -220,3 +220,63 @@ ValueError: ...
 
 答案：1. 不会；2. 异常消息可能包含秘密，日志不会自动脱敏；
 3. 不是，示例已捕获错误并选择继续，日志与控制流程是两件事。
+
+## A7：测试、规范与 GitHub Actions
+
+### A7.1 pytest
+
+`pytest` 和 `ruff` 放在 `pyproject.toml` 的 `dev` 依赖组，版本由 `uv.lock` 锁定。
+它们不是业务运行依赖。开发环境用 `uv sync --locked --dev`；
+后续纯运行环境可用 `uv sync --locked --no-dev`。
+现有 `unittest.TestCase` 无需重写，pytest 可以直接发现并运行。
+`testpaths` 限定测试目录，`pythonpath` 让测试能导入当前尚未打包安装的应用。
+
+### A7.2 Ruff
+
+配置目标 Python 3.11、格式化行长 88，并启用：
+
+- `E4/E7/E9`：基础代码错误；
+- `F`：未使用导入、未定义名称等问题；
+- `I`：导入排序与分组。
+
+检查只针对 `car_knowledge_rag` 和 `tests`，不扫描本地其他目录。
+ESLint 用于未来 TypeScript 前端，本步不引入。
+
+在项目根目录执行，与 CI 使用相同检查内容：
+
+```powershell
+& .\.tools\uv\bin\uv.exe sync --locked --dev --python-preference only-system --no-python-downloads --cache-dir .uv-cache
+& .\.tools\uv\bin\uv.exe run --locked --python-preference only-system --no-python-downloads --cache-dir .uv-cache ruff check car_knowledge_rag tests
+& .\.tools\uv\bin\uv.exe run --locked --python-preference only-system --no-python-downloads --cache-dir .uv-cache ruff format --check car_knowledge_rag tests
+& .\.tools\uv\bin\uv.exe run --locked --python-preference only-system --no-python-downloads --cache-dir .uv-cache python -m pytest -v
+```
+
+`ruff check` 检查代码规则，`ruff format --check` 只检查格式，`pytest` 验证行为。
+本地需要修正格式时用 `ruff format car_knowledge_rag tests`，它会改写文件；
+之后审阅 diff 并重新运行检查。CI 不自动修复或提交代码。
+原有 `python -m unittest discover -s tests -v` 仍可运行。
+
+### A7.3 工作流
+
+`.github/workflows/ci.yml` 在 push、PR 创建或更新以及手动触发时运行。
+Linux 临时环境依次拉取代码、安装固定版本 uv、安装 Python 3.11、
+执行 `uv sync --locked --dev`，再执行 lint、格式检查和测试。
+Action 使用完整提交 SHA 固定，工作流权限仅为 `contents: read`，
+不保留 checkout 凭证，不读取项目秘密，不部署资源；超时为 10 分钟。
+Python 固定 3.11 系列，补丁版本可能与本地不同。
+
+### A7.4 查看结果与处理失败
+
+推送后在仓库的 Actions 页面打开对应提交的 CI，再进入 `Python quality`：
+
+- `Lint` 失败：按文件、行号和规则编号修正问题；
+- `Check formatting` 失败：本地格式化并检查 diff；
+- `Test` 失败：查看失败断言、实际值与调用栈；
+- 依赖安装失败：先区分锁文件不同步、平台兼容性与网络错误。
+
+修正后重跑本地检查，再提交推送。CI 通过不会自动部署或合并；
+未设置分支保护时，CI 失败也不会自动禁止直接推送 main。
+本地通过和 GitHub Linux 通过是两份不同证据，首次云端结果以 Actions 实际运行记录为准。
+
+理解检查：Ruff 通过能否证明配置优先级正确？
+答案：不能。静态检查和格式检查不代替行为测试。

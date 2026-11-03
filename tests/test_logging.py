@@ -20,7 +20,9 @@ class LoggingTest(unittest.TestCase):
 
     def test_formatter_uses_utc(self) -> None:
         formatter = UTCFormatter("%(asctime)s", datefmt="%Y-%m-%dT%H:%M:%SZ")
-        record = logging.LogRecord("car_knowledge_rag", logging.INFO, "", 0, "", (), None)
+        record = logging.LogRecord(
+            "car_knowledge_rag", logging.INFO, "", 0, "", (), None
+        )
         record.created = 0
         self.assertEqual(formatter.format(record), "1970-01-01T00:00:00Z")
 
@@ -50,7 +52,9 @@ class LoggingTest(unittest.TestCase):
         self.assertEqual(result.stderr.count("Traceback (most recent call last):"), 1)
         self.assertIn("logging_demo.py", traceback_output)
         self.assertIn("ValueError:", traceback_output)
-        self.assertIn("Demo completed; the demonstration error was handled", traceback_output)
+        self.assertIn(
+            "Demo completed; the demonstration error was handled", traceback_output
+        )
         self.assertEqual(result.returncode, 0)
 
     def test_importing_demo_does_not_run_it(self) -> None:
@@ -98,5 +102,8 @@ class LoggingTest(unittest.TestCase):
                 actual = [line.split()[1] for line in result.stderr.splitlines()]
                 self.assertEqual(actual, expected)
                 self.assertTrue(
-                    all("car_knowledge_rag.retrieval" in line for line in result.stderr.splitlines())
+                    all(
+                        "car_knowledge_rag.retrieval" in line
+                        for line in result.stderr.splitlines()
+                    )
                 )

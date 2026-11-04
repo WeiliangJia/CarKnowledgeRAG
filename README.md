@@ -1,12 +1,16 @@
 # CarKnowledgeRAG
 
-个人车辆知识问答 RAG 调研项目。当前实现 A4～A7：环境、配置、日志和自动质量检查。
+个人车辆知识问答 RAG 调研项目。阶段 A 工程基础与 A8 文档整理已完成；车辆 RAG 业务尚未实现。
 
 ## 架构文档
 
 - [A8.1 架构说明](docs/architecture.md)：当前实现、目标数据流、问答路径与 AWS 部署边界。
 - [A8.1 结果报告](docs/A8.1-report.md)：本步产物、检查范围和验收结果。
 - [A8.2 技术决策记录](docs/technical-decisions.md)：选择原因、替代方案、代价与验证条件。
+- [任务与学习进度](docs/progress.md)：阶段 A 证据、后续路线及 20 个种子问题。
+- [学习记录模板](docs/learning-record-template.md)：每步解说、实现、验证与理解记录。
+- [参数实验模板](docs/experiment-record-template.md)：每轮假设、参数、指标及回退记录。
+- [A8.3/A8.4 与阶段 A 验收报告](docs/A8-report.md)：本次实测结果和后续边界。
 
 架构中的业务与云组件是后续计划，不代表已完成部署。
 

@@ -1,0 +1,160 @@
+{
+  "checked_on": "2026-11-04",
+  "report_timezone": "Australia/Sydney",
+  "market": "中国大陆",
+  "navigation_url": "https://www.zeekrlife.com/zh-cn/home",
+  "method": "浏览器正常加载，逐个点击官网车型入口及参数配置，等待版本列和参数行出现",
+  "scope": "官网车型导航公开展示的入口和配置表基础列；不验证实时可下单状态或全部选装组合",
+  "content_format": "动态 HTML 页面与配置对照表",
+  "verification_status": "全部11个入口与配置表头已核实，完整参数与脚注尚未采集核验",
+  "download_status": "未确认独立PDF或图片下载入口，不代表官网不存在其他文件入口",
+  "model_entry_count": 11,
+  "base_column_count": 35,
+  "models": [
+    {
+      "name": "极氪 9X",
+      "model_info_id": "10",
+      "model_year_code": "GMY_9X_01",
+      "product_url": "https://www.zeekrlife.com/zh-cn/zeekr9x?modelInfoId=10&modelYearCode=GMY_9X_01",
+      "config_url": "https://www.zeekrlife.com/zh-cn/config?modelInfoId=10&modelYearCode=GMY_9X_01",
+      "columns": [
+        {"group": "9X六座版", "label": "Max版"},
+        {"group": "9X六座版", "label": "Ultra版"},
+        {"group": "9X六座版", "label": "Hyper版"},
+        {"group": "9X六座版", "label": "曜黑版"},
+        {"group": "9X五座版", "label": "Ultra版"},
+        {"group": "9X五座版", "label": "Hyper版"},
+        {"group": "9X五座版", "label": "曜黑版"}
+      ],
+      "notes": "必须保留座位分组；部分配置列出现55/70等电池条件，后续采集选装和脚注，不展开组合计数。"
+    },
+    {
+      "name": "极氪 8X",
+      "model_info_id": "11",
+      "model_year_code": "GMY_Z012_01",
+      "product_url": "https://www.zeekrlife.com/zh-cn/zeekr8x?modelInfoId=11&modelYearCode=GMY_Z012_01",
+      "config_url": "https://www.zeekrlife.com/zh-cn/config?modelInfoId=11&modelYearCode=GMY_Z012_01",
+      "columns": [
+        {"group": null, "label": "Max"},
+        {"group": null, "label": "Ultra"},
+        {"group": null, "label": "Ultra+"},
+        {"group": null, "label": "曜影"}
+      ],
+      "notes": "前三列乘坐人数为5/6人、电池为55/70；曜影列为5人、70。这里只记录观察到的条件，不推导全部订单组合。"
+    },
+    {
+      "name": "焕新极氪 7X",
+      "model_info_id": "8",
+      "model_year_code": "GMY_7X_02",
+      "product_url": "https://www.zeekrlife.com/zh-cn/zeekr7x?modelInfoId=8&modelYearCode=GMY_7X_02",
+      "config_url": "https://www.zeekrlife.com/zh-cn/config?modelInfoId=8&modelYearCode=GMY_7X_02",
+      "columns": [
+        {"group": null, "label": "75度后驱Max版"},
+        {"group": null, "label": "103度后驱Max版"},
+        {"group": null, "label": "103度四驱Ultra版"}
+      ],
+      "notes": "保留表头原始名称，不将版本名相同的不同电池或驱动形式合并。"
+    },
+    {
+      "name": "焕新极氪 X",
+      "model_info_id": "3",
+      "model_year_code": "GMY_X_04",
+      "product_url": "https://www.zeekrlife.com/zh-cn/zeekrx?modelInfoId=3&modelYearCode=GMY_X_04",
+      "config_url": "https://www.zeekrlife.com/zh-cn/config?modelInfoId=3&modelYearCode=GMY_X_04",
+      "columns": [
+        {"group": null, "label": "Max五座版"},
+        {"group": null, "label": "Max四座版"},
+        {"group": null, "label": "Ultra五座版"}
+      ],
+      "notes": "座位布局已包含在列名中。"
+    },
+    {
+      "name": "焕新极氪 007GT",
+      "model_info_id": "9",
+      "model_year_code": "GMY_007_GT__02",
+      "product_url": "https://www.zeekrlife.com/zh-cn/zeekr007GT?modelInfoId=9&modelYearCode=GMY_007_GT__02",
+      "config_url": "https://www.zeekrlife.com/zh-cn/config?modelInfoId=9&modelYearCode=GMY_007_GT__02",
+      "columns": [
+        {"group": null, "label": "75度后驱 Max版"},
+        {"group": null, "label": "103度后驱 Max版"},
+        {"group": null, "label": "103度四驱 Ultra版"}
+      ],
+      "notes": "与007版本名称相似，但属于独立车型入口，不跨车系合并。"
+    },
+    {
+      "name": "焕新极氪 001",
+      "model_info_id": "1",
+      "model_year_code": "GMY_001_05",
+      "product_url": "https://www.zeekrlife.com/zh-cn/zeekr001?modelInfoId=1&modelYearCode=GMY_001_05",
+      "config_url": "https://www.zeekrlife.com/zh-cn/config?modelInfoId=1&modelYearCode=GMY_001_05",
+      "columns": [
+        {"group": null, "label": "95度四驱 Max版"},
+        {"group": null, "label": "103度后驱 Max版"},
+        {"group": null, "label": "103度四驱 Ultra版"},
+        {"group": null, "label": "103度四驱 Ultra+版"}
+      ],
+      "notes": "保留Ultra与Ultra+区别；001 FR另有入口。"
+    },
+    {
+      "name": "极氪 001 FR",
+      "model_info_id": "4",
+      "model_year_code": "GMY_FR_02",
+      "product_url": "https://www.zeekrlife.com/zh-cn/zeekr001FR?modelInfoId=4&modelYearCode=GMY_FR_02",
+      "config_url": "https://www.zeekrlife.com/zh-cn/config?modelInfoId=4&modelYearCode=GMY_FR_02",
+      "columns": [
+        {"group": null, "label": "ZEEKR 001 FR"}
+      ],
+      "notes": "按官网独立入口收录，不以导航展示推断实时可下单状态。"
+    },
+    {
+      "name": "焕新极氪 007",
+      "model_info_id": "5",
+      "model_year_code": "GMY_007__03",
+      "product_url": "https://www.zeekrlife.com/zh-cn/zeekr007?modelInfoId=5&modelYearCode=GMY_007__03",
+      "config_url": "https://www.zeekrlife.com/zh-cn/config?modelInfoId=5&modelYearCode=GMY_007__03",
+      "columns": [
+        {"group": null, "label": "75度后驱 Max版"},
+        {"group": null, "label": "103度后驱 Max版"},
+        {"group": null, "label": "103度四驱 Ultra版"}
+      ],
+      "notes": "与007GT分开记录，即使表头相同也不能共享配置值。"
+    },
+    {
+      "name": "焕新极氪 009",
+      "model_info_id": "2",
+      "model_year_code": "GMY_009_06",
+      "product_url": "https://www.zeekrlife.com/zh-cn/zeekr009?modelInfoId=2&modelYearCode=GMY_009_06",
+      "config_url": "https://www.zeekrlife.com/zh-cn/config?modelInfoId=2&modelYearCode=GMY_009_06",
+      "columns": [
+        {"group": null, "label": "七座 Ultra版"},
+        {"group": null, "label": "七座 Ultra+齐家版"},
+        {"group": null, "label": "六座 Ultra+行政版"}
+      ],
+      "notes": "座位及齐家/行政命名均需保留，不与光辉系列合并。"
+    },
+    {
+      "name": "极氪 009 光辉系列",
+      "model_info_id": "6",
+      "model_year_code": "GMY_009_04",
+      "product_url": "https://www.zeekrlife.com/zh-cn/zeekr009grand?modelInfoId=6&modelYearCode=GMY_009_04",
+      "config_url": "https://www.zeekrlife.com/zh-cn/config?modelInfoId=6&modelYearCode=GMY_009_04",
+      "columns": [
+        {"group": null, "label": "极氪009 光辉"},
+        {"group": null, "label": "极氪009 光辉典藏版"}
+      ],
+      "notes": "独立入口，两个列的乘坐人数均为4人。"
+    },
+    {
+      "name": "极氪 MIX",
+      "model_info_id": "7",
+      "model_year_code": "GMY_MIX_01",
+      "product_url": "https://www.zeekrlife.com/zh-cn/zeekrmix?modelInfoId=7&modelYearCode=GMY_MIX_01",
+      "config_url": "https://www.zeekrlife.com/zh-cn/config?modelInfoId=7&modelYearCode=GMY_MIX_01",
+      "columns": [
+        {"group": null, "label": "智驾版"},
+        {"group": null, "label": "长续航智驾版"}
+      ],
+      "notes": "保留基础版本与长续航版本区别。"
+    }
+  ]
+}

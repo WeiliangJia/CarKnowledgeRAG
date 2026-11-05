@@ -13,6 +13,7 @@ B3.1 已完成：[SHA-256 与单文件登记解说](docs/B3.1-file-hash.md)，�
 B3.2 已完成：[回执与批量清单解说及结果](docs/B3.2-manifest.md)，已登记116个文件并报告5组精确重复。
 生成清单保存在本地 `data/manifests/`，不提交 Git。
 B3.3 已完成：[清单校验命令与验收](docs/B3.3-verification.md)，用旧清单检测文件缺失与内容变化。
+B4 已完成：[9X 配置表解析与验收](docs/B4-config-parsing.md)，本地生成结构化 JSON，尚未扩展至其他车型。
 
 ## 架构文档
 

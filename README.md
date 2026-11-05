@@ -14,6 +14,7 @@ B3.2 已完成：[回执与批量清单解说及结果](docs/B3.2-manifest.md)�
 生成清单保存在本地 `data/manifests/`，不提交 Git。
 B3.3 已完成：[清单校验命令与验收](docs/B3.3-verification.md)，用旧清单检测文件缺失与内容变化。
 B4 已完成：[9X 配置表解析与验收](docs/B4-config-parsing.md)，本地生成结构化 JSON，尚未扩展至其他车型。
+B5 当前不适用：[官方 PDF 样本复核](docs/B5-pdf-review.md)，未找到需要补充解析的适用样本。
 
 ## 架构文档
 

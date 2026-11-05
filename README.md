@@ -9,6 +9,11 @@ B1 已完成：[2026-11-04 极氪中国官网清单与报告](docs/B1-sources.md
 B2 已完成：[原始资料采集命令与结果](docs/B2-collection.md)。22 个基础 URL 及 2 条 8X 详情已保存至本地 `data/raw/`。
 原始资料不提交 Git；尚未解析、规范化或核验为可问答的配置数据集。
 
+B3.1 已完成：[SHA-256 与单文件登记解说](docs/B3.1-file-hash.md)，提供只读的单文件指纹函数。
+B3.2 已完成：[回执与批量清单解说及结果](docs/B3.2-manifest.md)，已登记116个文件并报告5组精确重复。
+生成清单保存在本地 `data/manifests/`，不提交 Git。
+B3.3 已完成：[清单校验命令与验收](docs/B3.3-verification.md)，用旧清单检测文件缺失与内容变化。
+
 ## 架构文档
 
 - [A8.1 架构说明](docs/architecture.md)：当前实现、目标数据流、问答路径与 AWS 部署边界。

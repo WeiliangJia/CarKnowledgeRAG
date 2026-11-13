@@ -11,3 +11,4 @@ __pycache__/
 data/raw/
 data/manifests/
 data/parsed/
+data/normalized/

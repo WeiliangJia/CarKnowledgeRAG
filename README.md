@@ -16,6 +16,7 @@ B3.3 已完成：[清单校验命令与验收](docs/B3.3-verification.md)，用�
 B4 已完成：[9X 配置表解析与验收](docs/B4-config-parsing.md)，本地生成结构化 JSON，尚未扩展至其他车型。
 B5 当前不适用：[官方 PDF 样本复核](docs/B5-pdf-review.md)，未找到需要补充解析的适用样本。
 B6 当前不适用：[配置图片样本复核](docs/B6-ocr-review.md)，现有配置表未发现必须用 OCR 获取的值。
+B7 已完成：[9X 首版字段字典、规范化和待核验清单](docs/B7-normalization.md)，生成结果仅保存在本地。
 
 ## 架构文档
 

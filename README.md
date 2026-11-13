@@ -19,6 +19,8 @@ B6 当前不适用：[配置图片样本复核](docs/B6-ocr-review.md)，现有�
 B7 已完成：[9X 首版字段字典、规范化和待核验清单](docs/B7-normalization.md)，生成结果仅保存在本地。
 B8 已完成：[9X 数据质量检查](docs/B8-quality-check.md)，规范化记录与 B4 基准一致，124 条仍待核验。
 
+[C1–C3 本地数据库与导入](docs/C1-C3-postgres.md)：已在独立 PostgreSQL 上验证迁移和 9X 幂等导入；Docker 启动仍待恢复。
+
 ## 架构文档
 
 - [A8.1 架构说明](docs/architecture.md)：当前实现、目标数据流、问答路径与 AWS 部署边界。

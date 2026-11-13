@@ -1,0 +1,19 @@
+name: car-knowledge-rag
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: car_knowledge
+      POSTGRES_USER: car_rag
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set a local development password}
+    ports:
+      - "127.0.0.1:55432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "car_rag", "-d", "car_knowledge"]
+      interval: 3s
+      timeout: 3s
+      retries: 15
+volumes:
+  postgres_data:

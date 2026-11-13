@@ -17,6 +17,7 @@ B4 已完成：[9X 配置表解析与验收](docs/B4-config-parsing.md)，本地
 B5 当前不适用：[官方 PDF 样本复核](docs/B5-pdf-review.md)，未找到需要补充解析的适用样本。
 B6 当前不适用：[配置图片样本复核](docs/B6-ocr-review.md)，现有配置表未发现必须用 OCR 获取的值。
 B7 已完成：[9X 首版字段字典、规范化和待核验清单](docs/B7-normalization.md)，生成结果仅保存在本地。
+B8 已完成：[9X 数据质量检查](docs/B8-quality-check.md)，规范化记录与 B4 基准一致，124 条仍待核验。
 
 ## 架构文档
 

@@ -29,6 +29,8 @@ B8 已完成：[9X 数据质量检查](docs/B8-quality-check.md)，规范化记�
 
 [C8 批量评测](docs/C8-evaluation-runner.md)提供题集运行、人工判定导入和 JSON 报告。
 
+[D1–D3 语料准备](docs/D1-D3-9x-corpus.md)从固定的 9X 官网快照导出带来源定位的产品正文和配置证据。
+
 ## 架构文档
 
 - [A8.1 架构说明](docs/architecture.md)：当前实现、目标数据流、问答路径与 AWS 部署边界。

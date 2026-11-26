@@ -1,4 +1,4 @@
-"""Call OpenAI for embeddings and optional text-only chunking."""
+"""Call OpenAI for embeddings and structured text responses."""
 
 import argparse
 import json
@@ -53,6 +53,7 @@ class OpenAISettings(BaseSettings):
 
     openai_embed_api_key: SecretStr | None = None
     openai_chunk_api_key: SecretStr | None = None
+    openai_answer_api_key: SecretStr | None = None
 
 
 class OpenAIError(RuntimeError):
@@ -129,6 +130,16 @@ def metrics(body, elapsed_ms, request_id, *, embedding=False):
         raise ValueError("Invalid usage or model")
     return CallMetrics(
         body["model"], input_tokens, output_tokens, round(elapsed_ms, 1), request_id
+    )
+
+
+def response_text(body):
+    return "".join(
+        item["text"]
+        for part in body["output"]
+        if part["type"] == "message"
+        for item in part["content"]
+        if item["type"] == "output_text"
     )
 
 
@@ -231,14 +242,7 @@ def chunk_lines(lines: Sequence[str], *, settings: OpenAISettings | None = None)
             f"Chunking response did not complete, request_id={request_id}"
         )
     try:
-        output = "".join(
-            item["text"]
-            for part in body["output"]
-            if part["type"] == "message"
-            for item in part["content"]
-            if item["type"] == "output_text"
-        )
-        ranges = json.loads(output)["chunks"]
+        ranges = json.loads(response_text(body))["chunks"]
         if not isinstance(ranges, list):
             raise ValueError("Expected a list of chunk ranges")
         result = []

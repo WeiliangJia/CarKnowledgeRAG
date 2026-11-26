@@ -31,6 +31,18 @@ B8 已完成：[9X 数据质量检查](docs/B8-quality-check.md)，规范化记�
 
 [D1–D3 语料准备](docs/D1-D3-9x-corpus.md)从固定的 9X 官网快照导出带来源定位的产品正文和配置证据。
 
+[D4 检索切分](docs/D4-9x-chunking.md)将正文和配置证据整理成可回查来源的文本片段。
+
+[D5 检索证据标注](docs/D5-9x-retrieval-evidence.md)将评测题的原文位置映射到片段。
+
+[D6 OpenAI 模型接入](docs/D6-openai-models.md)提供文本嵌入、辅助切分和线上合成样本验收命令。
+
+[D7 真实 9X 线上试验](docs/D7-9x-openai-pilot.md)记录小样本检索排序、切分结果和调用用量。
+
+[D8 9X 向量索引](docs/D8-9x-qdrant-index.md)提供 Qdrant 启动和批量入库命令。
+
+[D9 9X 检索基线](docs/D9-9x-retrieval-baseline.md)记录完整证据命中率和 Ultra 版本过滤对照。
+
 ## 架构文档
 
 - [A8.1 架构说明](docs/architecture.md)：当前实现、目标数据流、问答路径与 AWS 部署边界。

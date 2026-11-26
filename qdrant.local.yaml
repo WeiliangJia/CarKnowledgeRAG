@@ -1,0 +1,9 @@
+service:
+  host: 127.0.0.1
+  http_port: 6333
+  grpc_port: null
+  enable_cors: false
+storage:
+  storage_path: ./storage
+  snapshots_path: ./snapshots
+telemetry_disabled: true
